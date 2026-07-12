@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CUSTOMIZE: Change the title -->
-    <title>Our Journey 💫</title>
+    <title>Mitisha &amp; Tirth's Journey 💕</title>
     <!-- CUSTOMIZE: Change favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -332,6 +332,208 @@
                 font-size: 1.8rem;
             }
         }
+
+        /* Live Togetherness Love Counter Clock */
+        .love-counter-box {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(255, 105, 180, 0.6);
+            border-radius: 25px;
+            padding: 1.8rem 1.5rem;
+            max-width: 750px;
+            margin: 1.5rem auto 3rem auto;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(255, 105, 180, 0.22);
+            animation: floatCounter 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatCounter {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-5px); }
+        }
+
+        .counter-label {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #d12e75;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.5px;
+        }
+
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        @media (max-width: 600px) {
+            .counter-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .counter-card {
+            background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+            border: 2px solid rgba(255, 182, 193, 0.8);
+            border-radius: 16px;
+            padding: 1rem 0.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.12);
+        }
+
+        .counter-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #ff1493;
+            line-height: 1.1;
+            margin-bottom: 0.2rem;
+        }
+
+        .counter-unit {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #777;
+            letter-spacing: 1px;
+        }
+
+        .counter-heart {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #c71585;
+            font-style: italic;
+        }
+
+        /* Love Compatibility Meter Mini-Game */
+        .love-meter-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(255, 243, 249, 0.96));
+            border: 3px solid rgba(255, 20, 147, 0.5);
+            border-radius: 30px;
+            padding: 2.5rem 2rem;
+            max-width: 700px;
+            margin: 3.5rem auto 2.5rem auto;
+            text-align: center;
+            box-shadow: 0 20px 45px rgba(255, 20, 147, 0.25);
+        }
+
+        .love-meter-heading {
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: #d12e75;
+            margin-bottom: 0.4rem;
+        }
+
+        .love-meter-sub {
+            font-size: 1.05rem;
+            color: #666;
+            margin-bottom: 1.8rem;
+        }
+
+        .names-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.8rem;
+        }
+
+        .name-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .name-box label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #888;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .name-box input {
+            background: #fff0f5;
+            border: 2px solid #ff69b4;
+            border-radius: 50px;
+            padding: 0.7rem 1.4rem;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #d12e75;
+            text-align: center;
+            width: 170px;
+            outline: none;
+        }
+
+        .heart-symbol {
+            font-size: 2.5rem;
+            color: #ff1493;
+            animation: pulseHeart 1.2s infinite;
+        }
+
+        .calculate-btn {
+            background: linear-gradient(45deg, #ff1493, #ff69b4);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 1.1rem 2.5rem;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 8px 22px rgba(255, 20, 147, 0.35);
+            transition: all 0.3s;
+        }
+
+        .calculate-btn:hover {
+            transform: scale(1.06);
+            box-shadow: 0 12px 30px rgba(255, 20, 147, 0.5);
+        }
+
+        .meter-progress-container {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 240, 245, 0.8);
+            border-radius: 20px;
+            border: 2px dashed #ff69b4;
+        }
+
+        .meter-bar-outer {
+            width: 100%;
+            height: 28px;
+            background: #e6e6e6;
+            border-radius: 50px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            box-shadow: inset 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        .meter-bar-inner {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #ff69b4, #ff1493, #ffd700);
+            border-radius: 50px;
+            transition: width 0.3s ease;
+        }
+
+        .meter-score {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #ff1493;
+            margin-bottom: 0.3rem;
+            text-shadow: 1px 1px 4px rgba(255, 20, 147, 0.2);
+        }
+
+        .meter-message {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #444;
+        }
     </style>
 </head>
 <body>
@@ -345,22 +547,50 @@
 
     <!-- CUSTOMIZE: Change the title and subtitle -->
     <h1 class="page-title">Our Journey Together 💫</h1>
-    <p class="page-subtitle">From Strangers to Best Friends</p>
+    <p class="page-subtitle">Mitisha &amp; Tirth's Love Story 💕</p>
+
+    <!-- Option 1: Live Togetherness Love Counter Clock -->
+    <div class="love-counter-box">
+        <div class="counter-label">✨ Time since my eyes first met yours on 30th April 2026, 6:30 PM ✨</div>
+        <div class="counter-grid">
+            <div class="counter-card">
+                <span class="counter-number" id="days-count">00</span>
+                <span class="counter-unit">Days</span>
+            </div>
+            <div class="counter-card">
+                <span class="counter-number" id="hours-count">00</span>
+                <span class="counter-unit">Hours</span>
+            </div>
+            <div class="counter-card">
+                <span class="counter-number" id="mins-count">00</span>
+                <span class="counter-unit">Minutes</span>
+            </div>
+            <div class="counter-card">
+                <span class="counter-number" id="secs-count">00</span>
+                <span class="counter-unit">Seconds</span>
+            </div>
+        </div>
+        <div class="counter-heart">💕 Every single second falling deeper in love with you 💕</div>
+    </div>
 
     <div class="timeline">
-        <!-- CUSTOMIZE: Add your timeline events here -->
-        <!-- Copy and paste timeline-item blocks for more events -->
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <div class="timeline-emoji">🏡</div>
+                <div class="timeline-date">30 April 2026</div>
+                <div class="timeline-title">1st Family Meet</div>
+                <div class="timeline-desc">The very first time our families met—a beautiful and special beginning to our journey together! ✨</div>
+            </div>
+        </div>
 
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-                <div class="timeline-emoji">💬</div>
-                <!-- CUSTOMIZE: Change date -->
-                <div class="timeline-date">January 1, 2023</div>
-                <!-- CUSTOMIZE: Change title -->
-                <div class="timeline-title">First Meeting</div>
-                <!-- CUSTOMIZE: Change description -->
-                <div class="timeline-desc">The day we first met! Little did we know this would be the start of an amazing journey.</div>
+                <div class="timeline-emoji">☕</div>
+                <div class="timeline-date">3 May 2026</div>
+                <div class="timeline-title">1st Date</div>
+                <div class="timeline-desc">Our magical first date together! Every moment spent with you felt effortless and unforgettable. 💖</div>
             </div>
         </div>
 
@@ -368,85 +598,117 @@
             <div class="timeline-dot"></div>
             <div class="timeline-content">
                 <div class="timeline-emoji">🤝</div>
-                <div class="timeline-date">March 15, 2023</div>
-                <div class="timeline-title">Becoming Friends</div>
-                <div class="timeline-desc">The friendship started feeling more real! We began spending more time together.</div>
+                <div class="timeline-date">7 May 2026</div>
+                <div class="timeline-title">2nd Family Meet</div>
+                <div class="timeline-desc">Bringing our families together again and taking another wonderful step closer! 🌸</div>
             </div>
         </div>
 
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-                <div class="timeline-emoji">😊</div>
-                <div class="timeline-date">June 20, 2023</div>
-                <div class="timeline-title">First Adventure</div>
-                <div class="timeline-desc">Our first adventure together! An unforgettable experience that brought us closer.</div>
+                <div class="timeline-emoji">💫</div>
+                <div class="timeline-date">9 May 2026</div>
+                <div class="timeline-title">2nd Date</div>
+                <div class="timeline-desc">Our second date—more smiles, more laughter, and falling even deeper in love! 🥰</div>
             </div>
         </div>
 
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-                <div class="timeline-emoji">⚡</div>
-                <div class="timeline-date">Through The Journey</div>
-                <div class="timeline-title">Ups and Downs</div>
-                <div class="timeline-desc">We've had our moments, but we always found our way back. That's what real friendship is about!</div>
+                <div class="timeline-emoji">🥥</div>
+                <div class="timeline-date">14 May 2026</div>
+                <div class="timeline-title">૧ શ્રીફળ (Shrifal Ceremony)</div>
+                <div class="timeline-desc">A truly auspicious and blessed milestone in our journey—૧ શ્રીફળ! A divine seal of our togetherness. 🙏✨</div>
             </div>
         </div>
 
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-                <div class="timeline-emoji">🎂</div>
-                <!-- CUSTOMIZE: Change to their birthday date -->
-                <div class="timeline-date">January 25, 2025</div>
-                <div class="timeline-title">Your Birthday!</div>
-                <!-- CUSTOMIZE: Update the message -->
-                <div class="timeline-desc">And here we are, celebrating YOU! Another year of our amazing friendship... 💖</div>
+                <div class="timeline-emoji">👫</div>
+                <div class="timeline-date">28 May 2026</div>
+                <div class="timeline-title">1st Hand Holding</div>
+                <div class="timeline-desc">The first time our hands intertwined—feeling the warmth, comfort, and promise of holding onto each other forever. 💕</div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <div class="timeline-emoji">💋</div>
+                <div class="timeline-date">6 June 2026</div>
+                <div class="timeline-title">First Lip Kiss</div>
+                <div class="timeline-desc">A sweet, magical moment that sealed our bond with endless love and tenderness. 😘❤️</div>
             </div>
         </div>
     </div>
 
-    <!-- Friendship Receipt - CUSTOMIZE all values -->
+    <!-- Love Receipt -->
     <div class="receipt-container">
         <div class="receipt-header">
-            <div class="receipt-title">🧾 FRIENDSHIP RECEIPT</div>
-            <!-- CUSTOMIZE: Change subtitle -->
-            <div class="receipt-subtitle">Best Friends Inc.</div>
+            <div class="receipt-title">🧾 LOVE RECEIPT</div>
+            <div class="receipt-subtitle">Mitisha &amp; Tirth Forever 💕</div>
         </div>
         <div class="receipt-row">
-            <span class="receipt-label">Years of Friendship:</span>
-            <!-- CUSTOMIZE: Update value -->
-            <span class="receipt-value">2+ years</span>
+            <span class="receipt-label">First Family Meet:</span>
+            <span class="receipt-value">30 Apr 2026</span>
         </div>
         <div class="receipt-row">
-            <span class="receipt-label">First Meeting:</span>
-            <!-- CUSTOMIZE: Update date -->
-            <span class="receipt-value">Jan 1, 2023</span>
+            <span class="receipt-label">First Date:</span>
+            <span class="receipt-value">3 May 2026</span>
         </div>
         <div class="receipt-row">
-            <span class="receipt-label">Adventures Together:</span>
-            <span class="receipt-value">Many 📍</span>
+            <span class="receipt-label">Auspicious Milestone:</span>
+            <span class="receipt-value">૧ શ્રીફળ 🥥</span>
         </div>
         <div class="receipt-row">
-            <span class="receipt-label">Laughs Shared:</span>
-            <span class="receipt-value">Countless 😄</span>
+            <span class="receipt-label">Hand Holding &amp; Kisses:</span>
+            <span class="receipt-value">Infinite Love 😘</span>
         </div>
         <div class="receipt-row">
-            <span class="receipt-label">Inside Jokes:</span>
-            <span class="receipt-value">Too many!</span>
+            <span class="receipt-label">Smiles &amp; Joy Shared:</span>
+            <span class="receipt-value">Countless 😊</span>
         </div>
         <div class="receipt-row">
-            <span class="receipt-label">Memories Made:</span>
-            <span class="receipt-value">∞ Infinite</span>
+            <span class="receipt-label">Future Together:</span>
+            <span class="receipt-value">∞ Forever</span>
         </div>
         <div class="receipt-total">
-            <strong>TOTAL FRIENDSHIP VALUE: PRICELESS 💖</strong>
+            <strong>TOTAL BOND VALUE: PRICELESS 💖</strong>
         </div>
         <div class="receipt-footer">
-            Thank you for being an amazing friend!<br>
-            <!-- CUSTOMIZE: Change your name -->
-            - [YOUR NAME] 💖
+            Thank you for being my everything!<br>
+            - Tirth 💖
+        </div>
+    </div>
+
+    <!-- Option 5: Official Love Compatibility Meter Mini-Game -->
+    <div class="love-meter-card">
+        <h2 class="love-meter-heading">💖 Official Love Compatibility Meter 💖</h2>
+        <p class="love-meter-sub">Calculate the cosmic connection score between Mitisha &amp; Tirth!</p>
+        
+        <div class="names-row">
+            <div class="name-box">
+                <label>Her Name</label>
+                <input type="text" id="name1" value="Mitisha" readonly>
+            </div>
+            <div class="heart-symbol">+</div>
+            <div class="name-box">
+                <label>His Name</label>
+                <input type="text" id="name2" value="Tirth" readonly>
+            </div>
+        </div>
+
+        <button class="calculate-btn" id="calculate-btn">Calculate Our Love Score 💕</button>
+
+        <div class="meter-progress-container" id="meter-container" style="display: none;">
+            <div class="meter-bar-outer">
+                <div class="meter-bar-inner" id="meter-fill"></div>
+            </div>
+            <div class="meter-score" id="meter-score">0%</div>
+            <div class="meter-message" id="meter-message">Analyzing stars... ✨</div>
         </div>
     </div>
 
@@ -513,6 +775,94 @@
                 onComplete: () => {
                     window.location.href = 'memories.html';
                 }
+            });
+        }
+
+        // 1. Live Togetherness Love Counter Clock (Since April 30, 2026 6:30 PM)
+        const firstSeenDate = new Date('2026-04-30T18:30:00');
+        const daysEl = document.getElementById('days-count');
+        const hoursEl = document.getElementById('hours-count');
+        const minsEl = document.getElementById('mins-count');
+        const secsEl = document.getElementById('secs-count');
+
+        function updateLoveCounter() {
+            const now = new Date();
+            let diff = Math.abs(now - firstSeenDate); // in ms
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            diff -= days * (1000 * 60 * 60 * 24);
+
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            diff -= hours * (1000 * 60 * 60);
+
+            const mins = Math.floor(diff / (1000 * 60));
+            diff -= mins * (1000 * 60);
+
+            const secs = Math.floor(diff / 1000);
+
+            if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+            if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+            if (minsEl) minsEl.textContent = String(mins).padStart(2, '0');
+            if (secsEl) secsEl.textContent = String(secs).padStart(2, '0');
+        }
+
+        updateLoveCounter();
+        setInterval(updateLoveCounter, 1000);
+
+        // 5. Official Love Compatibility Meter Mini-Game
+        const calcBtn = document.getElementById('calculate-btn');
+        const meterContainer = document.getElementById('meter-container');
+        const meterFill = document.getElementById('meter-fill');
+        const meterScore = document.getElementById('meter-score');
+        const meterMsg = document.getElementById('meter-message');
+        let isCalculating = false;
+
+        if (calcBtn) {
+            calcBtn.addEventListener('click', () => {
+                if (isCalculating) return;
+                isCalculating = true;
+
+                calcBtn.disabled = true;
+                meterContainer.style.display = 'block';
+                meterFill.style.width = '0%';
+                meterScore.textContent = '0%';
+                meterMsg.textContent = 'Analyzing stars & heartbeats... ✨';
+
+                let progress = { value: 0 };
+                gsap.to(progress, {
+                    value: 99,
+                    duration: 2.2,
+                    ease: "power1.inOut",
+                    onUpdate: () => {
+                        const val = Math.floor(progress.value);
+                        meterFill.style.width = val + '%';
+                        meterScore.textContent = val + '%';
+                        if (val > 30 && val < 65) {
+                            meterMsg.textContent = 'Checking cosmic connection... 💕';
+                        } else if (val >= 65) {
+                            meterMsg.textContent = 'Whoa!! Extraordinary chemistry! 💖';
+                        }
+                    },
+                    onComplete: () => {
+                        setTimeout(() => {
+                            meterFill.style.width = '100%';
+                            meterScore.textContent = '1000% ∞ SOULMATES FOREVER! 💖';
+                            meterMsg.textContent = '✨ Matched in Heaven since April 30, 2026 at 6:30 PM! ✨';
+
+                            // Confetti explosion
+                            confetti({
+                                particleCount: 80,
+                                spread: 80,
+                                origin: { y: 0.75 },
+                                colors: ['#ff1493', '#ff69b4', '#ffd700']
+                            });
+
+                            isCalculating = false;
+                            calcBtn.disabled = false;
+                            calcBtn.textContent = 'Recalculate Soulmate Score 💞';
+                        }, 450);
+                    }
+                });
             });
         }
     </script>

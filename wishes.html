@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CUSTOMIZE: Change the title -->
-    <title>Birthday Wishes 💖</title>
+    <title>Mitisha &amp; Tirth's Wishes 💖</title>
     <!-- CUSTOMIZE: Change favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -26,20 +26,35 @@
 
     <div class="container">
         <!-- CUSTOMIZE: Change the name -->
-        <h1>Happy Birthday [THEIR NAME] 💖</h1>
+        <h1>Happy Birthday Mitisha 💖</h1>
+        <p class="reasons-subtitle">Reasons why I love you and why you are so special to me! 💕</p>
 
-        <div id="reasons-container"></div>
+        <div id="flip-card-container" class="flip-card-container">
+            <div id="card-inner" class="card-inner">
+                <div class="card-face card-front" id="card-front">
+                    <div class="card-badge" id="front-badge">Reason 1 of 6</div>
+                    <div class="card-emoji" id="front-emoji">✨</div>
+                    <div class="card-text" id="front-text">Loading...</div>
+                    <div class="card-hint">Click card or press Next to flip 180° 🔄</div>
+                </div>
+                <div class="card-face card-back" id="card-back">
+                    <div class="card-badge" id="back-badge">Reason 2 of 6</div>
+                    <div class="card-emoji" id="back-emoji">🌸</div>
+                    <div class="card-text" id="back-text">Loading...</div>
+                    <div class="card-hint">Click card or press Next to flip 180° 🔄</div>
+                </div>
+            </div>
+        </div>
 
-        <button class="shuffle-button">Click Here... 💕</button>
-        <div class="reason-counter"></div>
+        <button class="shuffle-button" id="next-btn">Next Reason 🔄</button>
 
         <div class="ending-section">
             <div class="teddy-hug">
                 <!-- CUSTOMIZE: Change the image -->
-                <img src="./photo-1.jpg" alt="Special Photo">
+                <img src="./photos/first-date.jpg" alt="Our First Date">
             </div>
             <!-- CUSTOMIZE: Change the ending text -->
-            <div class="ending-text">You're the BEST! 💖</div>
+            <div class="ending-text">Mitisha, You're my everything! 💖</div>
         </div>
     </div>
 

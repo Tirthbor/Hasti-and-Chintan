@@ -36,124 +36,133 @@ if (localStorage.getItem('musicPlaying') === 'true') {
 // - gif: Animation file to show (optional, use animation-1.gif or animation-2.gif)
 const reasons = [
     {
-        text: "Because you always know how to make me smile! 💖",
+        text: "Because from our very first meeting to today, you have been my greatest blessing! 🏡💖",
         emoji: "✨",
         gif: "gif1.gif"
     },
     {
-        text: "Because you're the best listener I know! 🌸",
-        emoji: "💫",
+        text: "Because your smile lights up my entire world! 😍💫",
+        emoji: "🌸",
         gif: "gif2.gif"
     },
     {
-        text: "Because your laugh is contagious! ✨",
-        emoji: "🌟",
+        text: "Because holding your hand makes me feel complete and at home! 👫💕",
+        emoji: "🤝",
         gif: "gif1.gif"
     },
     {
-        text: "Because you make every moment special! 🎂",
+        text: "Because every date, every laugh, and every conversation with you feels magical! ☕🌹",
         emoji: "💖",
         gif: "gif2.gif"
     },
     {
-        text: "Because you're simply amazing! Here's to another wonderful year! 🎉",
-        emoji: "🎊",
+        text: "Because your sweet kisses leave the most beautiful marks on my heart! 💋❤️",
+        emoji: "🌟",
         gif: "gif1.gif"
+    },
+    {
+        text: "Because I love you more than words can ever say—Happy 24th Birthday, Mitisha! 🎂🎉",
+        emoji: "🎊",
+        gif: "gif2.gif"
     }
-    // Add more reasons as needed!
 ];
 
-// State management
+// True 180-degree 3D Flip Card state management
 let currentReasonIndex = 0;
-const reasonsContainer = document.getElementById('reasons-container');
-const shuffleButton = document.querySelector('.shuffle-button');
-const reasonCounter = document.querySelector('.reason-counter');
-let isTransitioning = false;
+let currentAngle = 0;
+let isFlipping = false;
 
-// Create reason card with gif
-function createReasonCard(reason) {
-    const card = document.createElement('div');
-    card.className = 'reason-card';
+const cardInner = document.getElementById('card-inner');
+const frontBadge = document.getElementById('front-badge');
+const frontEmoji = document.getElementById('front-emoji');
+const frontText = document.getElementById('front-text');
 
-    const text = document.createElement('div');
-    text.className = 'reason-text';
-    text.innerHTML = `${reason.emoji} ${reason.text}`;
+const backBadge = document.getElementById('back-badge');
+const backEmoji = document.getElementById('back-emoji');
+const backText = document.getElementById('back-text');
 
-    const gifOverlay = document.createElement('div');
-    gifOverlay.className = 'gif-overlay';
-    gifOverlay.innerHTML = `<img src="${reason.gif}" alt="Celebration">`;
+const nextBtn = document.getElementById('next-btn');
 
-    card.appendChild(text);
-    card.appendChild(gifOverlay);
-
-    gsap.from(card, {
-        opacity: 0,
-        y: 50,
-        duration: 0.5,
-        ease: "back.out"
-    });
-
-    return card;
-}
-
-// Display new reason
-function displayNewReason() {
-    if (isTransitioning) return;
-    isTransitioning = true;
-
-    if (currentReasonIndex < reasons.length) {
-        const card = createReasonCard(reasons[currentReasonIndex]);
-        reasonsContainer.appendChild(card);
-
-        // Update counter
-        reasonCounter.textContent = `Reason ${currentReasonIndex + 1} of ${reasons.length}`;
-
-        currentReasonIndex++;
-
-        // Check if we should transform the button
-        if (currentReasonIndex === reasons.length) {
-            gsap.to(shuffleButton, {
-                scale: 1.1,
-                duration: 0.5,
-                ease: "elastic.out",
-                onComplete: () => {
-                    // CUSTOMIZE: Change button text
-                    shuffleButton.textContent = "Continue to Timeline 💫";
-                    shuffleButton.classList.add('story-mode');
-                    shuffleButton.addEventListener('click', () => {
-                        gsap.to('body', {
-                            opacity: 0,
-                            duration: 1,
-                            onComplete: () => {
-                                window.location.href = 'timeline.html';
-                            }
-                        });
-                    });
-                }
-            });
-        }
-
-        // Create floating elements
-        createFloatingElement();
-
-        setTimeout(() => {
-            isTransitioning = false;
-        }, 500);
+function populateFace(side, index) {
+    const r = reasons[index];
+    if (side === 'front') {
+        if (frontBadge) frontBadge.textContent = `Reason ${index + 1} of ${reasons.length}`;
+        if (frontEmoji) frontEmoji.textContent = r.emoji;
+        if (frontText) frontText.textContent = r.text;
     } else {
-        window.location.href = "timeline.html";
+        if (backBadge) backBadge.textContent = `Reason ${index + 1} of ${reasons.length}`;
+        if (backEmoji) backEmoji.textContent = r.emoji;
+        if (backText) backText.textContent = r.text;
     }
 }
 
-// Initialize button click
-shuffleButton.addEventListener('click', () => {
-    gsap.to(shuffleButton, {
-        scale: 0.9,
-        duration: 0.1,
-        yoyo: true,
-        repeat: 1
+// Initialize front and back faces
+if (cardInner) {
+    populateFace('front', 0);
+    populateFace('back', 1 % reasons.length);
+    if (nextBtn) nextBtn.textContent = `Next Reason 🔄 (2 of ${reasons.length})`;
+}
+
+function flipToNextReason() {
+    if (isFlipping) return;
+
+    // If already at last reason and button is in story-mode
+    if (currentReasonIndex === reasons.length - 1 && nextBtn && nextBtn.classList.contains('story-mode')) {
+        gsap.to('body', {
+            opacity: 0,
+            duration: 0.8,
+            onComplete: () => {
+                window.location.href = 'timeline.html';
+            }
+        });
+        return;
+    }
+
+    isFlipping = true;
+
+    // Rotate continuously by 180 degrees
+    currentAngle += 180;
+    currentReasonIndex = (currentReasonIndex + 1) % reasons.length;
+
+    gsap.to(cardInner, {
+        rotationY: currentAngle,
+        duration: 0.65,
+        ease: "power2.inOut",
+        onComplete: () => {
+            // Update button text
+            if (nextBtn) {
+                if (currentReasonIndex === reasons.length - 1) {
+                    nextBtn.textContent = "Continue to Timeline 💫";
+                    nextBtn.classList.add('story-mode');
+                } else {
+                    nextBtn.textContent = `Next Reason 🔄 (${currentReasonIndex + 2} of ${reasons.length})`;
+                    nextBtn.classList.remove('story-mode');
+                }
+            }
+
+            // Prepare the hidden face for the subsequent reason
+            const nextHiddenIndex = (currentReasonIndex + 1) % reasons.length;
+            if ((currentAngle / 180) % 2 === 1) {
+                // Currently showing Back, so Front is hidden -> update Front
+                populateFace('front', nextHiddenIndex);
+            } else {
+                // Currently showing Front, so Back is hidden -> update Back
+                populateFace('back', nextHiddenIndex);
+            }
+
+            createFloatingElement();
+            isFlipping = false;
+        }
     });
-    displayNewReason();
-});
+}
+
+if (cardInner) {
+    cardInner.addEventListener('click', flipToNextReason);
+}
+
+if (nextBtn) {
+    nextBtn.addEventListener('click', flipToNextReason);
+}
 
 // Floating elements function
 function createFloatingElement() {

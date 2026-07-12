@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitisha, Will You Be Mine Forever? 💍💖</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Great+Vibes&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="propose.css">
+</head>
+<body>
+    <div class="custom-cursor">
+        <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#ff69b4"/>
+        </svg>
+    </div>
+
+    <!-- Music toggle -->
+    <div class="music-controller">
+        <button id="music-toggle" class="music-btn">🎵 Music</button>
+        <audio id="bg-music" loop>
+            <source src="hbd.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="floating-container" id="floating-container"></div>
+
+    <div class="proposal-wrapper">
+        <!-- Step 1 & 2: The Proposal Card -->
+        <div class="proposal-card" id="proposal-card">
+            <div class="ring-badge">💍 💕 💍</div>
+
+            <h1 class="proposal-heading">A Question From My Heart...</h1>
+
+            <div class="love-letter">
+                <p>Dearest <strong>Mitisha</strong>,</p>
+                <p>From our very first family meet on April 30th to our magical first date... from holding your hand for the first time to every smile, laugh, and cheek kiss... every second spent with you has made my life infinitely brighter.</p>
+                <p>You are my best friend, my greatest blessing, and my everything.</p>
+                <p class="letter-closing">So today, on your special day, there is only one thing my heart wants to ask you...</p>
+            </div>
+
+            <div class="big-question-box">
+                <h2 class="big-question">Mitisha, Will You Be Mine Forever? 💍❤️</h2>
+                <p class="question-sub">Will you walk hand-in-hand with me for all our tomorrows?</p>
+            </div>
+
+            <div class="buttons-container" id="buttons-container">
+                <button class="btn-yes" id="yes-btn">YES! A Thousand Times YES! 💖💍</button>
+                <button class="btn-no" id="no-btn">No 🙈</button>
+            </div>
+        </div>
+
+        <!-- Step 3: Celebration Modal after YES -->
+        <div class="yes-celebration" id="yes-celebration" style="display: none;">
+            <div class="celebration-card">
+                <div class="heart-ring">💍💖</div>
+                <h1 class="she-said-yes">SHE SAID YES!! 🎉💖</h1>
+                <p class="celebration-text">Mitisha, you just made me the happiest person in the entire world! 🥰</p>
+                <div class="look-around-box">
+                    <p class="look-around-heading">✨ Turn around and look at Tirth right now! ✨</p>
+                    <p class="look-around-sub">Your forever begins today 💕</p>
+                </div>
+                <div class="celebration-signature">With endless love, forever yours — Tirth ❤️</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="propose.js"></script>
+</body>
+</html>
