@@ -135,7 +135,8 @@ function launchHeartConfetti() {
 }
 
 if (yesBtn) {
-    yesBtn.addEventListener('click', () => {
+    const handleYes = (e) => {
+        if (e.type === 'touchend') e.preventDefault();
         gsap.to(proposalCard, {
             scale: 0.8,
             opacity: 0,
@@ -152,5 +153,7 @@ if (yesBtn) {
                 launchHeartConfetti();
             }
         });
-    });
+    };
+    yesBtn.addEventListener('click', handleYes);
+    yesBtn.addEventListener('touchend', handleYes);
 }

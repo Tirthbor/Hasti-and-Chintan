@@ -134,11 +134,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Start typing effect
         typeGreeting();
 
-        // Button click handler
+        // Button click & touch handler
         const ctaButton = document.querySelector('#birthday-content .cta-button');
         if (ctaButton) {
-            ctaButton.addEventListener('click', function() {
-                // Start music on first interaction if not playing
+            const handleEnter = function(e) {
+                e.preventDefault();
                 if (bgMusic && bgMusic.paused) {
                     bgMusic.play().catch(function() {});
                     localStorage.setItem('musicPlaying', 'true');
@@ -146,16 +146,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 gsap.to('body', {
                     opacity: 0,
-                    duration: 1,
+                    duration: 0.6,
                     onComplete: function() {
                         window.location.href = 'wishes.html';
                     }
                 });
-            });
+            };
+            ctaButton.addEventListener('click', handleEnter);
+            ctaButton.addEventListener('touchend', handleEnter);
 
             // Hover effects
             ctaButton.addEventListener('mouseenter', function() {
-                gsap.to(ctaButton, { scale: 1.1, duration: 0.3 });
+                gsap.to(ctaButton, { scale: 1.05, duration: 0.3 });
             });
             ctaButton.addEventListener('mouseleave', function() {
                 gsap.to(ctaButton, { scale: 1, duration: 0.3 });

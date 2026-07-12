@@ -156,12 +156,19 @@ function flipToNextReason() {
     });
 }
 
+const handleFlip = function(e) {
+    if (e.type === 'touchend') e.preventDefault();
+    flipToNextReason();
+};
+
 if (cardInner) {
-    cardInner.addEventListener('click', flipToNextReason);
+    cardInner.addEventListener('click', handleFlip);
+    cardInner.addEventListener('touchend', handleFlip);
 }
 
 if (nextBtn) {
-    nextBtn.addEventListener('click', flipToNextReason);
+    nextBtn.addEventListener('click', handleFlip);
+    nextBtn.addEventListener('touchend', handleFlip);
 }
 
 // Floating elements function

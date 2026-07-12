@@ -354,3 +354,12 @@ body {
         font-size: 2rem;
     }
 }
+
+@media (hover: none) and (pointer: coarse), (max-width: 600px) {
+    * { cursor: auto !important; }
+    .custom-cursor { display: none !important; }
+    .btn-yes, .btn-no {
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+}

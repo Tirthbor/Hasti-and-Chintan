@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- CUSTOMIZE: Change the title -->
     <title>Mitisha &amp; Tirth's Journey 💕</title>
     <!-- CUSTOMIZE: Change favicon -->
@@ -528,6 +528,28 @@
             font-size: 1.2rem;
             font-weight: 700;
             color: #444;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.5rem; }
+            .love-counter-box, .love-meter-card, .receipt-container {
+                padding: 1.4rem 0.8rem;
+                border-radius: 20px;
+                width: 96%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .counter-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+            .counter-number { font-size: 1.6rem; }
+            .name-box input { width: 130px; font-size: 1.05rem; }
+            .calculate-btn, .next-btn {
+                width: 92%;
+                max-width: 320px;
+                padding: 1.1rem 1rem;
+                font-size: 1.1rem;
+                touch-action: manipulation;
+                -webkit-tap-highlight-color: transparent;
+            }
         }
     </style>
 </head>

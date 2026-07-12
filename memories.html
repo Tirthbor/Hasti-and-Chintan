@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- CUSTOMIZE: Change the title -->
     <title>Mitisha &amp; Tirth's Memories ✨</title>
     <!-- CUSTOMIZE: Change favicon -->
@@ -331,6 +331,21 @@
         .share-btn:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(218, 112, 214, 0.6);
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.5rem; }
+            .welcome h1 { font-size: 2.5rem; line-height: 1.2; }
+            .memory-card { margin-bottom: 2rem; border-radius: 18px; }
+            .memory-img { height: 260px; }
+            .cta-propose-btn {
+                width: 92%;
+                max-width: 320px;
+                padding: 1.1rem 1rem;
+                font-size: 1.15rem;
+                touch-action: manipulation;
+                -webkit-tap-highlight-color: transparent;
+            }
         }
     </style>
 </head>
