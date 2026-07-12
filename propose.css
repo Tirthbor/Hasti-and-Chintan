@@ -358,6 +358,14 @@ body {
 @media (hover: none) and (pointer: coarse), (max-width: 600px) {
     * { cursor: auto !important; }
     .custom-cursor { display: none !important; }
+    .proposal-wrapper {
+        padding-top: 4rem !important;
+    }
+    .back-btn, .music-toggle {
+        top: 12px !important;
+        width: 40px !important;
+        height: 40px !important;
+    }
     .btn-yes, .btn-no {
         touch-action: manipulation;
         -webkit-tap-highlight-color: transparent;

@@ -302,8 +302,15 @@ h1 {
 @media (hover: none) and (pointer: coarse), (max-width: 600px) {
     * { cursor: auto !important; }
     .cursor { display: none !important; }
-    h1 { font-size: 2.5rem; line-height: 1.2; }
+    .container { padding-top: 3.5rem !important; }
+    h1 { font-size: 2.3rem; line-height: 1.2; }
     .greeting { font-size: 1.15rem; margin-bottom: 2rem; }
+    .music-toggle {
+        top: 12px !important;
+        right: 12px !important;
+        width: 40px !important;
+        height: 40px !important;
+    }
     .cta-button {
         width: 90%;
         max-width: 320px;
