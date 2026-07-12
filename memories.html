@@ -8,7 +8,7 @@
     <!-- CUSTOMIZE: Change favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
         * {
             margin: 0;
@@ -18,23 +18,14 @@
 
         body {
             min-height: 100vh;
-            background: linear-gradient(135deg,
-                    rgba(255, 209, 220, 0.85) 0%,
-                    rgba(230, 230, 250, 0.85) 25%,
-                    rgba(255, 239, 213, 0.85) 50%,
-                    rgba(230, 230, 250, 0.85) 75%,
-                    rgba(255, 209, 220, 0.85) 100%),
-                    url('background-movable.gif');
-            background-size: 400% 400%, cover;
-            background-position: center, center;
-            background-attachment: fixed;
-            animation: gradientFlow 15s ease infinite;
-            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #FFF6F8 0%, #FDEBF1 35%, #FFF0F5 70%, #FAE1EA 100%);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #2D1E24;
+            padding: 2rem 1rem;
             overflow-x: hidden;
-            color: #4a4a4a;
-        }
-
-        @keyframes gradientFlow {
+        }@keyframes gradientFlow {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
@@ -71,11 +62,11 @@
         }
 
         .welcome h1 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 4rem;
-            /* CUSTOMIZE: Change primary color */
-            color: #ff69b4;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.8rem;
+            font-weight: 700;
+            color: #9C1F4B;
+            text-shadow: 0 4px 15px rgba(156, 31, 75, 0.15);
             animation: fadeInScale 2s ease;
         }
 

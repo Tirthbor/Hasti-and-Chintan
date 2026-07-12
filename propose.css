@@ -7,17 +7,12 @@
 
 body {
     min-height: 100vh;
-    background: linear-gradient(135deg,
-            rgba(255, 182, 193, 0.9) 0%,
-            rgba(255, 218, 224, 0.9) 30%,
-            rgba(248, 200, 220, 0.9) 60%,
-            rgba(255, 192, 203, 0.9) 100%),
-            url('background-movable.gif');
+    background: linear-gradient(135deg, #FFF6F8 0%, #FDEBF1 35%, #FFF0F5 70%, #FAE1EA 100%), url('background-movable.gif');
     background-size: 400% 400%, cover;
     background-position: center;
     background-attachment: fixed;
-    font-family: 'Quicksand', sans-serif;
-    color: #4a4a4a;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #2D1E24;
     overflow-x: hidden;
     position: relative;
 }
@@ -175,16 +170,18 @@ body {
 }
 
 .big-question {
-    font-family: 'Bubblegum Sans', cursive;
-    font-size: 2.6rem;
-    color: #c71585;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.9rem;
+    font-weight: 700;
+    color: #9C1F4B;
     margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 5px rgba(255, 20, 147, 0.2);
+    text-shadow: 0 4px 15px rgba(156, 31, 75, 0.15);
 }
 
 .question-sub {
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 1.1rem;
-    color: #666;
+    color: #633647;
     font-weight: 500;
 }
 
@@ -199,16 +196,17 @@ body {
 }
 
 .btn-yes {
-    background: linear-gradient(45deg, #ff1493, #ff69b4);
+    background: linear-gradient(135deg, #A8204E 0%, #D13E73 100%);
     color: white;
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 50px;
-    padding: 1.2rem 2.8rem;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 1.4rem;
+    padding: 1.25rem 3.2rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.35rem;
     font-weight: 700;
-    box-shadow: 0 10px 25px rgba(255, 20, 147, 0.4);
-    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    box-shadow: 0 14px 32px rgba(168, 32, 78, 0.35);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     animation: heartbeat 1.5s infinite;
 }
 

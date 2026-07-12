@@ -8,7 +8,7 @@
     <!-- CUSTOMIZE: Change favicon -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -18,35 +18,30 @@
 
         body {
             min-height: 100vh;
-            background: linear-gradient(135deg,
-                    rgba(255, 209, 220, 0.85) 0%,
-                    rgba(230, 230, 250, 0.85) 25%,
-                    rgba(255, 239, 213, 0.85) 50%,
-                    rgba(230, 230, 250, 0.85) 75%,
-                    rgba(255, 209, 220, 0.85) 100%),
-                    url('background-movable.gif');
-            background-size: 400% 400%, cover;
-            background-position: center, center;
-            background-attachment: fixed;
-            animation: gradientFlow 15s ease infinite;
-            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #FFF6F8 0%, #FDEBF1 35%, #FFF0F5 70%, #FAE1EA 100%);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #2D1E24;
+            padding: 2rem 1rem;
             overflow-x: hidden;
-            color: #4a4a4a;
         }
 
         .page-title {
             text-align: center;
-            color: white;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-family: 'Cormorant Garamond', serif;
+            color: #9C1F4B;
+            font-size: 3.4rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            text-shadow: 0 4px 15px rgba(156, 31, 75, 0.15);
         }
 
         .page-subtitle {
             text-align: center;
-            color: rgba(255,255,255,0.9);
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #633647;
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-bottom: 2.5rem;
         }
 
         .timeline {

@@ -11,13 +11,13 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* CUSTOMIZE: Change gradient colors for different theme */
-    background: linear-gradient(-45deg, #fee9f7, #e8f5fe, #fef2e8, #f0ffe8);
+    background: linear-gradient(135deg, #FFF6F8 0%, #FDEBF1 35%, #FFF0F5 70%, #FAE1EA 100%);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
-    font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     overflow: hidden;
     position: relative;
+    color: #2D1E24;
 }
 
 .cursor {
@@ -106,38 +106,46 @@ body {
 }
 
 h1 {
-    font-size: 3.5rem;
-    /* CUSTOMIZE: Change title color */
-    color: #ff69b4;
-    text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
-    margin-bottom: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.8rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #9C1F4B;
+    text-shadow: 0 4px 20px rgba(156, 31, 75, 0.18);
+    margin-bottom: 1.8rem;
     opacity: 0;
 }
 
 .greeting {
-    font-size: 1.5rem;
-    /* CUSTOMIZE: Change greeting color */
-    color: #8a2be2;
-    margin-bottom: 3rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: #633647;
+    margin-bottom: 2.5rem;
     min-height: 2em;
+    letter-spacing: 0.2px;
 }
 
 .cta-button {
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    /* CUSTOMIZE: Change button gradient */
-    background: linear-gradient(45deg, #ff69b4, #ff99cc);
-    border: none;
+    padding: 1.15rem 2.6rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, #A8204E 0%, #D13E73 100%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 50px;
-    color: white;
+    color: #FFFFFF;
     cursor: pointer;
-    box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 12px 30px rgba(168, 32, 78, 0.32);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     opacity: 0;
 }
 
 .cta-button:hover {
-    transform: scale(1.1);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 16px 36px rgba(168, 32, 78, 0.45);
+    background: linear-gradient(135deg, #B52354 0%, #E04B82 100%);
     box-shadow: 0 0 25px rgba(255, 105, 180, 0.7);
 }
 
