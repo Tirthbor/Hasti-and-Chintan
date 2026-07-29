@@ -1,4 +1,4 @@
-// Music control
+﻿// Music control
 const bgMusic = document.getElementById('bgMusic');
 const musicToggle = document.getElementById('musicToggle');
 const musicIcon = musicToggle.querySelector('.music-icon');
@@ -61,7 +61,7 @@ const reasons = [
         gif: "gif1.gif"
     },
     {
-        text: "Because I love you more than words can ever say—Happy 24th Birthday, Mitisha! 🎂🎉",
+        text: "Because I love you more than words can ever say—Happy 24th Birthday, Hasti! 🎂🎉",
         emoji: "🎊",
         gif: "gif2.gif"
     }
